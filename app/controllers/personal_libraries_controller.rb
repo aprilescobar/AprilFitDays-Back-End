@@ -1,7 +1,7 @@
 class PersonalLibrariesController < ApplicationController
     def index
         personal_libraries = PersonalLibrary.all
-        render json: personal_libraries, except: [:created_at, :updated_at]
+        render json: personal_libraries, except: [:created_at, :updated_at], include: [:workout, :user]
     end
 
     def show
