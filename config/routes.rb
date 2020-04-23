@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
-  resources :playlist_workouts
-  resources :log_workouts
-  resources :logs
-  resources :private_libraries
+  resources :users, only: [:create]
   resources :workouts
-  resources :playlists
-  resources :users
+  resources :private_libraries
+  # resources :logs
+  # resources :log_workouts
+  # resources :playlists
+  # resources :playlist_workouts
+  
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

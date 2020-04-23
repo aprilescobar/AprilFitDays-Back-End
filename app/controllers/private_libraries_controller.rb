@@ -1,2 +1,0 @@
-class PrivateLibrariesController < ApplicationController
-end
