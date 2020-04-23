@@ -33,6 +33,15 @@ ActiveRecord::Schema.define(version: 2020_04_22_224250) do
     t.index ["user_id"], name: "index_logs_on_user_id"
   end
 
+  create_table "personal_libraries", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "workout_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_personal_libraries_on_user_id"
+    t.index ["workout_id"], name: "index_personal_libraries_on_workout_id"
+  end
+
   create_table "playlist_workouts", force: :cascade do |t|
     t.bigint "playlist_id", null: false
     t.bigint "workout_id", null: false
@@ -48,15 +57,6 @@ ActiveRecord::Schema.define(version: 2020_04_22_224250) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_playlists_on_user_id"
-  end
-
-  create_table "private_libraries", force: :cascade do |t|
-    t.bigint "user_id", null: false
-    t.bigint "workout_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id"], name: "index_private_libraries_on_user_id"
-    t.index ["workout_id"], name: "index_private_libraries_on_workout_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -81,10 +81,10 @@ ActiveRecord::Schema.define(version: 2020_04_22_224250) do
   add_foreign_key "log_workouts", "logs"
   add_foreign_key "log_workouts", "workouts"
   add_foreign_key "logs", "users"
+  add_foreign_key "personal_libraries", "users"
+  add_foreign_key "personal_libraries", "workouts"
   add_foreign_key "playlist_workouts", "playlists"
   add_foreign_key "playlist_workouts", "workouts"
   add_foreign_key "playlists", "users"
-  add_foreign_key "private_libraries", "users"
-  add_foreign_key "private_libraries", "workouts"
   add_foreign_key "workouts", "users"
 end
