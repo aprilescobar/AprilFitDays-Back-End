@@ -1,7 +1,7 @@
 class PersonalLibrariesController < ApplicationController
     def index
         personal_libraries = PersonalLibrary.all
-        render json: personal_libraries, except: [:created_at, :updated_at], include: [:workout, :user]
+        render json: personal_libraries, except: [:created_at, :updated_at], include: [:user, :workout ]
     end
 
     def show
@@ -28,6 +28,6 @@ class PersonalLibrariesController < ApplicationController
     private
 
     def personal_library_params
-        params.require(:personal_library).permit(:user_id, :name, :description, :media)
+        params.require(:personal_library).permit(:user_id, :workout_id)
     end
 end
