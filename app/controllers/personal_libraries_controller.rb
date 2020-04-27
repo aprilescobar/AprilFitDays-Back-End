@@ -11,7 +11,7 @@ class PersonalLibrariesController < ApplicationController
 
     def create
         personal_library = PersonalLibrary.create(personal_library_params)
-        render json: personal_library, except: [:created_at, :updated_at], status: 201
+        render json: personal_library, except: [:created_at, :updated_at], include: [:user, :workout ], status: 201
     end
 
     def update
