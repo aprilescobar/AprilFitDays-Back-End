@@ -1,5 +1,6 @@
 class Workout < ApplicationRecord
   belongs_to :user
+  has_many :personal_libraries, dependent: :destroy
   has_many :log_workouts
   has_many :logs, through: :log_workouts
   has_many :playlist_workouts
