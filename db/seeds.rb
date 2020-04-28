@@ -16,10 +16,10 @@ p "Users seeded"
 
 ### WORKOUT ###
 
-Workout.create(user_id:4, name:"25 Minute Climbers Mobility Routine", description:"This video shares a short flexibility routine for climbers with stretches and exercise to improve shoulder, overhead, chest, hip and hamstring mobility.", media:"https://www.youtube.com/watch?v=x-1OJW3OMb4")
-Workout.create(user_id:4, name:"20 Minute Full Body Flexibility Routine V3!", description:"This video shares a 20-minute full-body flexibility routine to develop hamstrings, hip flexor, shoulder and general all-round flexibility.", media:"https://www.youtube.com/watch?v=2wYQhJdv2oI&t=1s")
-Workout.create(user_id:4, name:"5 Minute Morning Mobility Routine!", description:"Full body stretches", media:"https://www.youtube.com/watch?v=-tetoszaTTo")
-Workout.create(user_id:4, name:"40 Minute Bodyweight Mass Gain Workout *No Equipment*", description:"This video shares a 40-minute no equipment, full-body bodyweight strength workout that will help develop strength, hypertrophy and all-round gains whilst having no access to a gym.", media:"https://www.youtube.com/watch?v=vROpPHyukIw")
+Workout.create(user_id:4, name:"Climbers Mobility Routine", duration: 25, description:"This video shares a short flexibility routine for climbers with stretches and exercise to improve shoulder, overhead, chest, hip and hamstring mobility.", media:"https://www.youtube.com/watch?v=x-1OJW3OMb4")
+Workout.create(user_id:4, name:"Full Body Flexibility Routine V3!", duration: 20, description:"This video shares a 20-minute full-body flexibility routine to develop hamstrings, hip flexor, shoulder and general all-round flexibility.", media:"https://www.youtube.com/watch?v=2wYQhJdv2oI&t=1s")
+Workout.create(user_id:4, name:"Morning Mobility Routine!", duration: 5, description:"Full body stretches", media:"https://www.youtube.com/watch?v=-tetoszaTTo")
+Workout.create(user_id:4, name:"Bodyweight Mass Gain Workout *No Equipment*", duration: 40, description:"This video shares a 40-minute no equipment, full-body bodyweight strength workout that will help develop strength, hypertrophy and all-round gains whilst having no access to a gym.", media:"https://www.youtube.com/watch?v=vROpPHyukIw")
 
 p "Workout seeded"
 
