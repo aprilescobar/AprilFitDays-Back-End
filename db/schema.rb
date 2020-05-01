@@ -10,27 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_28_225040) do
+ActiveRecord::Schema.define(version: 2020_05_01_193857) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "log_workouts", force: :cascade do |t|
-    t.bigint "log_id", null: false
+  create_table "logs", force: :cascade do |t|
+    t.bigint "user_id", null: false
     t.bigint "workout_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["log_id"], name: "index_log_workouts_on_log_id"
-    t.index ["workout_id"], name: "index_log_workouts_on_workout_id"
-  end
-
-  create_table "logs", force: :cascade do |t|
-    t.bigint "user_id", null: false
-    t.date "date"
-    t.datetime "time"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_logs_on_user_id"
+    t.index ["workout_id"], name: "index_logs_on_workout_id"
   end
 
   create_table "personal_libraries", force: :cascade do |t|
@@ -79,9 +70,8 @@ ActiveRecord::Schema.define(version: 2020_04_28_225040) do
     t.index ["user_id"], name: "index_workouts_on_user_id"
   end
 
-  add_foreign_key "log_workouts", "logs"
-  add_foreign_key "log_workouts", "workouts"
   add_foreign_key "logs", "users"
+  add_foreign_key "logs", "workouts"
   add_foreign_key "personal_libraries", "users"
   add_foreign_key "personal_libraries", "workouts"
   add_foreign_key "playlist_workouts", "playlists"

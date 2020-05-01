@@ -1,9 +1,8 @@
 Rails.application.routes.draw do
+  resources :logs
   resources :users
   resources :workouts
   resources :personal_libraries
-  # resources :logs
-  # resources :log_workouts
   # resources :playlists
   # resources :playlist_workouts
   

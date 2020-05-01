@@ -48,9 +48,17 @@ PersonalLibrary.create(user_id:4, workout_id:4)
 p "PersonalLibrary seeded"
 
 ### LOG ###
+Log.create(user_id: 1, workout_id: 1)
+Log.create(user_id: 1, workout_id: 2)
+Log.create(user_id: 1, workout_id: 3)
+Log.create(user_id: 1, workout_id: 4)
+Log.create(user_id: 2, workout_id: 1)
+Log.create(user_id: 2, workout_id: 6)
+# Log.create(user_id: , workout_id: )
 
 
-# p "Log seeded"
+
+p "Log seeded"
 
 # ### LOG WORKOUT ###
 
